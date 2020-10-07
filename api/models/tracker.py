@@ -8,11 +8,11 @@ class Tracker(models.Model):
   # https://docs.djangoproject.com/en/3.0/ref/models/fields/
   # DEFINE CHOICES
   TherapyType = (
-    ('item_key1', 'Chemotherapy'),
-    ('item_key2', 'Radiation'),
-    ('item_key3', 'Hormonal'),
-    ('item_key4', 'Biological'),
-    ('item_key5', 'Surgery')
+    ('Chemotherapy', 'Chemotherapy'),
+    ('Radiation', 'Radiation'),
+    ('Hormonal', 'Hormonal'),
+    ('Biological', 'Biological'),
+    ('Surgery', 'Surgery')
   )
   # Therapy = models.CharField(max_length = 20, choices = TherapyType)
   Symptoms = (
