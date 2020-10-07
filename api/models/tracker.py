@@ -22,9 +22,10 @@ class Tracker(models.Model):
     (4, 'fatigue')
   )
   # DEFINE FIELDS
-  therapyType=MultiSelectField(
+  therapyType=models.CharField(
+    max_length = 20,
     choices = TherapyType,
-    max_choices = 1
+    default = 'item_key1'
     # default = 'Chemotherapy'
   )
   symptoms=MultiSelectField(
