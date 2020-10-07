@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
-from .models.deck import Tracker
+from .models.tracker import Tracker
 # from .models.card import Card
 
 class UserAdmin(BaseUserAdmin):

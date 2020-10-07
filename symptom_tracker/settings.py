@@ -47,7 +47,10 @@ else:
 # Default database as defined above depending on development
 # or production environment
 DATABASES = {
-    'default': DB
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'symptom_tracker',
+    }
 }
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -77,8 +80,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'data',
-    'MultiSelectField',
+    'multiselectfield',
 )
 
 MIDDLEWARE = [

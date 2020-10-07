@@ -1,34 +1,14 @@
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
 
-from .models.deck import Deck
+from .models.tracker import Tracker
 from .models.user import User
-from .models.card import Card
 
-
-
-class CardSerializer(serializers.ModelSerializer):
-  deck_id = serializers.StringRelatedField(read_only=True)
-  # only runs through when we're trying to Read the books, not create or update
-  # like the string defined in the author model
-  class Meta:
-    model = Card
-    fields = ('id', 'question','answer', 'created_at', 'updated_at', 'deck_id', 'owner')
-
-class CardReadSerializer(CardSerializer):
-    deck = serializers.StringRelatedField(read_only=True)
-    question = serializers.CharField(max_length=100)
-    answer = serializers.CharField(max_length=100)
-
-# card_views - update route potentially needs this serializer
-# class CardWriteSerializer(CardSerializer):
-#     update = serializers.CharField(max_length=150, write_only=True)
-
-class DeckSerializer(serializers.ModelSerializer):
-    cards = CardReadSerializer(many=True, read_only=True)
+class TrackerSerializer(serializers.ModelSerializer):
+    # cards = CardReadSerializer(many=True, read_only=True)
     class Meta:
-        model = Deck
-        fields = ('id', 'topic', 'cards', 'owner')
+        model = Tracker
+        fields = ('id', 'symptoms', 'therapyType', 'owner')
 
 class UserSerializer(serializers.ModelSerializer):
     # This model serializer will be used for User creation

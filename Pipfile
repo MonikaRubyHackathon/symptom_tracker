@@ -12,7 +12,7 @@ djangorestframework = "*"
 django-rest-auth = "*"
 django-cors-headers = "*"
 psycopg2-binary = "*"
-django = "*"
+django = "==3.0"
 gunicorn = "*"
 whitenoise = "*"
 
