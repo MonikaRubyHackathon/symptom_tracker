@@ -77,6 +77,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'data',
+    'MultiSelectField',
 )
 
 MIDDLEWARE = [

@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
 from .models.user import User
-from .models.deck import Deck
-from .models.card import Card
+from .models.deck import Tracker
+# from .models.card import Card
 
 class UserAdmin(BaseUserAdmin):
     ordering = ['id']
@@ -40,5 +40,5 @@ class UserAdmin(BaseUserAdmin):
 # register the model and tell Django to use the above UserAdmin
 # class to format the pages:
 admin.site.register(User, UserAdmin)
-admin.site.register(Deck)
-admin.site.register(Card)
+admin.site.register(Tracker)
+# admin.site.register(Card)

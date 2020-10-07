@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from multiselectfield import MultiSelectField
 
 # Create your models here.
 class Tracker(models.Model):
@@ -12,7 +13,7 @@ class Tracker(models.Model):
     ('Biological'),
     ('Surgery')
   )
-
+  # Therapy = models.CharField(max_length = 20, choices = TherapyType)
   Symptoms = (
     ('nausea'),
     ('hair loss'),
@@ -22,12 +23,12 @@ class Tracker(models.Model):
 
   owner = models.ForeignKey(
       get_user_model(),
-      therapyType = models.Charfield(
+      therapyType = models.ChoiceField(
         max_length = 20,
         choices = TherapyType,
         default = 'Chemotherapy'
       ),
-      symptoms=models.NullBooleanField(
+      symptoms=models.ChoiceField(
         max_length = 20,
         choices = Symptoms
       ),
